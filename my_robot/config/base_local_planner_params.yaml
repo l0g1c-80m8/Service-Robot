@@ -16,9 +16,9 @@ TrajectoryPlannerROS:
   vx_samples: 5.0
   vtheta_samples: 10.0
 
-  pdist_scale: 0.6 #0.6
-  gdist_scale: 10.0 #0.8
-  occdist_scale: 0.02
+  pdist_scale: 20.0 #0.6
+  gdist_scale: 0.1 #0.8
+  occdist_scale: 0.001
 
   meter_scoring: true
 
