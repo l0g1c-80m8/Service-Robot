@@ -1,15 +1,22 @@
 #!/bin/sh
 
-xterm -e " roslaunch my_robot world.launch " &
+# Move to catkin_ws root
+cd ../../
+
+# Launch the world containing the robot
+xterm -e " source devel/setup.bash; roslaunch my_robot world.launch " &
 
 sleep 10
 
-xterm -e " roslaunch my_robot slam_gmapping.launch " &
+# Launch gmapping package for SLAM
+xterm -e " source devel/setup.bash; roslaunch my_robot slam_gmapping.launch " &
 
 sleep 5
 
-xterm -e " roslaunch my_robot view_navigation.launch " &
+# Launch rviz for navigation
+xterm -e " source devel/setup.bash; roslaunch my_robot view_navigation.launch rviz_config:=\"./rvizConfig/viz-test-slam.rviz\"" &
 
 sleep 5
 
-xterm -e " roslaunch my_robot keyboard_teleop.launch " &
+# Launch teleop node to manually control the robot
+xterm -e " source devel/setup.bash; roslaunch my_robot keyboard_teleop.launch " &

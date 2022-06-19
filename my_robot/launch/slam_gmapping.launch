@@ -2,7 +2,7 @@
 
 <launch>
 
-  <arg name="scan_topic" default="/scan" />
+  <arg name="scan_topic" default="scan" />
   <arg name="base_frame" default="robot_footprint" />
 
   <param name="use_sim_time" value="true" /> 
