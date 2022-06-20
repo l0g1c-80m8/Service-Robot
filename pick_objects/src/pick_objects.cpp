@@ -69,5 +69,5 @@ int main(int argc, char** argv){
         ROS_INFO("ERROR: Robot failed to reach pickup point");
     }
     ROS_INFO("INFO: Shutting down pick_objects node");
-    return;
+    return 0;
 }
