@@ -24,8 +24,8 @@ int main(int argc, char** argv){
     goal.target_pose.header.stamp = ros::Time::now();
 
     // Define a position and orientation for the robot to reach
-    goal.target_pose.pose.position.x = 1.0;
-    goal.target_pose.pose.position.y = 1.0;
+    goal.target_pose.pose.position.x = -3.25;
+    goal.target_pose.pose.position.y = -4.50;
     goal.target_pose.pose.orientation.w = 1.0;
 
     // Send the goal position and orientation for the robot to reach
@@ -43,9 +43,9 @@ int main(int argc, char** argv){
         ros::Duration(5.0).sleep();
 
         // Second goal
-        goal.target_pose.pose.position.x = 1.0; // from "zones.h"
-        goal.target_pose.pose.position.y = 1.0; // from "zones.h"
-        goal.target_pose.pose.orientation.w = 1.0; // w=0 means quaternio; w=1 means Euler
+        goal.target_pose.pose.position.x = 2.50;
+        goal.target_pose.pose.position.y = -4.50;
+        goal.target_pose.pose.orientation.w = 1.0;
 
 
         // Send the goal position and orientation for the robot to reach
