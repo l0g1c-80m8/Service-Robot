@@ -43,8 +43,8 @@ int main(int argc, char** argv){
         ros::Duration(5.0).sleep();
 
         // Second goal
-        goal.target_pose.pose.position.x = 2.50;
-        goal.target_pose.pose.position.y = -4.50;
+        goal.target_pose.pose.position.x = -4.50;
+        goal.target_pose.pose.position.y = 7.25;
         goal.target_pose.pose.orientation.w = 1.0;
 
 
