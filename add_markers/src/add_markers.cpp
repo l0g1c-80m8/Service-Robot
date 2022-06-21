@@ -37,7 +37,7 @@ void initializeObjectMarker()
     marker.type = shape;
 }
 
-void setObjectMarkerViz (float a = 1.0, float r = 0.62f, float g = 0.12f, float b = 0.94f)
+void setObjectMarkerViz (float a = 1.0, float r = 0.56f, float g = 0.0f, float b = 1.0f)
 {
     // Set the color -- be sure to set alpha to something non-zero!
     marker.color.r = r;
