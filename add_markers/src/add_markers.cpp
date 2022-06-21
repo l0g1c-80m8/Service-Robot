@@ -62,7 +62,7 @@ int main( int argc, char** argv )
     ros::Rate r(1);
     ros::Publisher marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
 
-    const float pickup_pose_x = 0.0f, pickup_pose_y = 0.0f, dropoff_pose_x = 0.0f, dropoff_pose_y = 0.0f;
+    const float pickup_pose_x = -3.25f, pickup_pose_y = -4.50f, dropoff_pose_x = -4.50f, dropoff_pose_y = 7.25f;
     ROS_INFO("INFO: Pickup  point: pose.x: %5.2f , pose.y: %5.2f", pickup_pose_x, pickup_pose_y);
     ROS_INFO("INFO: Drop-off point: pose.x: %5.2f , pose.y: %5.2f", dropoff_pose_x, dropoff_pose_y);
 
