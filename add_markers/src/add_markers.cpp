@@ -9,6 +9,7 @@ visualization_msgs::Marker marker;
 bool flag_near_pickup_point = false;
 bool flag_near_dropoff_point = false;
 bool flag_mission_status_complete = false;
+const float pickup_pose_x = -3.25f, pickup_pose_y = -4.50f, dropoff_pose_x = -4.50f, dropoff_pose_y = 7.25f;
 
 void initializeObjectMarker()
 {
@@ -66,13 +67,13 @@ double distanceToMarker(double x1, double y1, double x2, double y2){
 
 void checkRobotToMarkerVicinity(const nav_msgs::Odometry &odom_msg)
 {
-    double pose_x = odom_msg.pose.pose.position.y;
-    double pose_y = -odom_msg.pose.pose.position.x; // is "inverted"
+    double robot_pose_x = odom_msg.pose.pose.position.y;
+    double robot_pose_y = -odom_msg.pose.pose.position.x; // is "inverted"
     double distToPickup, distToDropoff;
     const float minDistError = 0.2f;
 
-    distToPickup = distanceToMarker(position_x, position_y, pickup_zone_x, pickup_zone_y);
-    distToDropoff = distanceToMarker(position_x, position_y, drop_off_zone_x, drop_off_zone_y);
+    distToPickup = distanceToMarker(robot_pose_x, robot_pose_y, pickup_pose_x, pickup_pose_y);
+    distToDropoff = distanceToMarker(robot_pose_x, robot_pose_y, dropoff_pose_x, dropoff_pose_y);
 
     flag_near_pickup_point = false;
     flag_near_dropoff_point = false;
@@ -97,7 +98,6 @@ int main( int argc, char** argv )
     ros::Publisher marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
     ros::Subscriber odom_sub = n.subscribe("odom", 1, checkRobotToMarkerVicinity);
 
-    const float pickup_pose_x = -3.25f, pickup_pose_y = -4.50f, dropoff_pose_x = -4.50f, dropoff_pose_y = 7.25f;
     ROS_INFO("INFO: Pickup  point: pose.x: %5.2f , pose.y: %5.2f", pickup_pose_x, pickup_pose_y);
     ROS_INFO("INFO: Drop-off point: pose.x: %5.2f , pose.y: %5.2f", dropoff_pose_x, dropoff_pose_y);
 
