@@ -58,6 +58,22 @@ int main(int argc, char** argv){
         if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
         {
             ROS_INFO("SUCCESS: Robot arrived at drop-off point");
+
+            // Make robot move away slightly after dropping off the object
+            goal.target_pose.pose.position.x = -3.00;
+            goal.target_pose.pose.position.y = 6.0;
+            goal.target_pose.pose.orientation.w = 1.0;
+            // Send the goal position and orientation for the robot to reach
+            ROS_INFO("INFO: Moving robot away from drop-off point");
+            ac.sendGoal(goal);
+            // Wait an infinite time for the results
+            ac.waitForResult();
+
+            if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
+                ROS_INFO("SUCCESS: Robot successfully completed its mission");
+            else
+                ROS_INFO("ERROR: Robot failed its mission");
+
         }
         else
         {
@@ -68,6 +84,7 @@ int main(int argc, char** argv){
     {
         ROS_INFO("ERROR: Robot failed to reach pickup point");
     }
+    ros::Duration(10.0).sleep();
     ROS_INFO("INFO: Shutting down pick_objects node");
     return 0;
 }
