@@ -7,7 +7,7 @@ visualization_msgs::Marker marker;
 
 void initializeObjectMarker()
 {
-    // Set our initial shape type to be a cube
+    // Set our initial shape type to be a SPHERE
     uint32_t shape = visualization_msgs::Marker::SPHERE;
 
     // Set the frame ID and timestamp.  See the TF tutorials for information on these.
@@ -23,15 +23,15 @@ void initializeObjectMarker()
     marker.action = visualization_msgs::Marker::ADD;
 
     // Set the scale of the marker -- 1x1x1 here means 1m on a side
-    marker.scale.x = 0.2;
-    marker.scale.y = 0.2;
-    marker.scale.z = 0.2;
+    marker.scale.x = 0.4;
+    marker.scale.y = 0.4;
+    marker.scale.z = 0.4;
 
     // Set the marker type.
     marker.type = shape;
 }
 
-void setObjectMarkerViz (float a = 1.0, float r = 0.0f, float g = 1.0f, float b = 0.0f)
+void setObjectMarkerViz (float a = 1.0, float r = 0.62f, float g = 0.12f, float b = 0.94f)
 {
     // Set the color -- be sure to set alpha to something non-zero!
     marker.color.r = r;
@@ -62,7 +62,7 @@ int main( int argc, char** argv )
     ros::Rate r(1);
     ros::Publisher marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
 
-    const float pickup_pose_x = -3.25f, pickup_pose_y = 4.50f, dropoff_pose_x = -4.50f, dropoff_pose_y = 7.25f;
+    const float pickup_pose_x = 0.0f, pickup_pose_y = 0.0f, dropoff_pose_x = 0.0f, dropoff_pose_y = 0.0f;
     ROS_INFO("INFO: Pickup  point: pose.x: %5.2f , pose.y: %5.2f", pickup_pose_x, pickup_pose_y);
     ROS_INFO("INFO: Drop-off point: pose.x: %5.2f , pose.y: %5.2f", dropoff_pose_x, dropoff_pose_y);
 
@@ -96,8 +96,8 @@ int main( int argc, char** argv )
         ROS_INFO("INFO: Object moved successfully");
 
         ROS_INFO("INFO: Shutting down add_markers node");
-        ros::Duration(10.0).sleep();
-        break;
+        // ros::Duration(10.0).sleep();
+        // break;
 
         r.sleep();
     }
