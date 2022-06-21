@@ -3,7 +3,7 @@
 <launch>
 
   <node name="rviz" pkg="rviz" type="rviz" respawn="false"
-    args=" -d $(find my_robot)/rvizConfig/viz-test-nav.rviz"
+    args=" -d $(find my_robot)/rvizConfig/viz-test-marker.rviz"
   />
 
 </launch>
