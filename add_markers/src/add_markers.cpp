@@ -96,8 +96,8 @@ int main( int argc, char** argv )
         ROS_INFO("INFO: Object moved successfully");
 
         ROS_INFO("INFO: Shutting down add_markers node");
-        // ros::Duration(10.0).sleep();
-        // break;
+        ros::Duration(10.0).sleep();
+        break;
 
         r.sleep();
     }
