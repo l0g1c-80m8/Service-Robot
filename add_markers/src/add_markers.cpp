@@ -2,12 +2,14 @@
 #include <visualization_msgs/Marker.h>
 #include <math.h>
 
+// Make object marker object available globally
+visualization_msgs::Marker marker;
+
 void initializeObjectMarker()
 {
     // Set our initial shape type to be a cube
     uint32_t shape = visualization_msgs::Marker::SPHERE;
 
-    visualization_msgs::Marker marker;
     // Set the frame ID and timestamp.  See the TF tutorials for information on these.
     marker.header.frame_id = "/map";
     marker.header.stamp = ros::Time::now();
