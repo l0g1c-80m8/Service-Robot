@@ -45,8 +45,19 @@ To Launch the file go to the <code>scripts</code> directory and run the shell sc
 - <code>home_service.sh</code>: This script launches the full project to simulate the working of the home robot and orchastrate the pickup and delivery mission. It launches the gazebo world containing the robot along with <code>amcl</code> node to perform localization, <code>rviz</code> to vizualize the results, and <code>pick_objects</code> and <code>add_marker</code> nodes the orchastrate the robot mission (path-planning and dummy object marker vizualization).
 
 ### Result
-
-<br>
+For a full demo run of the mission, refer to the video link above.
+1. Robot at spawn location as soon as the gazebo world loads: <br>
+![spawn](./assets/1_spawn.png)
+2. Robot is on its way to pick up the purple ball (object in question):
+![en_route_pickup](./assets/2_en_route_pickup.png)
+3. Robot has reached the pickup point and has collected the object:
+![at_pickup](./assets/3_at_pickup.png)
+4. Robot is en route to the drop-off point:
+![en_route_dropoff](./assets/4_en_route_dropoff.png)
+5. Robot has reached the drop-off point and has delivered the object:
+![at_dropoff](./assets/5_at_dropoff.png)
+6. Robot has moved away and has successfully completed its mission:
+![mission_success](./assets/6_mission_success.png)
 
 #### References
 - [ROS](wiki.ros.org/kinetic/)
