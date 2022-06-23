@@ -2,7 +2,7 @@
 A service robot that can be tasked to pick up and drop off items in an indoor environment.
 
 ### Demo Run
-A full demo run for this porject can be found at this link: https://youtu.be/DriO79eBzKM
+A full demo run for this porject can be found at this [link](https://youtu.be/6A5CASUCfLo) ([Alt Link]()).
 
 ## Overview
 
