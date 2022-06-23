@@ -13,7 +13,7 @@ xterm -e " source devel/setup.bash; roslaunch my_robot amcl.launch " &
 
 sleep 5
 
-# Launch rviz to localize the results
+# Launch rviz to vizualize the results
 xterm -e " source devel/setup.bash; roslaunch my_robot view_navigation.launch " &
 
 sleep 5
