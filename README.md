@@ -44,6 +44,8 @@ To Launch the file go to the <code>scripts</code> directory and run the shell sc
 - <code>add_markers.sh</code>: Launch the gazebo world containing the robot along with <code>rviz</code> to vizualize the results and <code>add_markers</code> node to test and simulate the spawning of a visual object marker (purple colour) at the pickup and drop-off points.
 - <code>home_service.sh</code>: This script launches the full project to simulate the working of the home robot and orchastrate the pickup and delivery mission. It launches the gazebo world containing the robot along with <code>amcl</code> node to perform localization, <code>rviz</code> to vizualize the results, and <code>pick_objects</code> and <code>add_marker</code> nodes the orchastrate the robot mission (path-planning and dummy object marker vizualization).
 
+Run the scripts by invoking them as shell commands - <code>./<script_name>.sh</code>. If the script is not an executable, run the command <code>chmod +x <script_name>.sh</code> to make it an executable and then run the previous command. Alternatively, you can run the scripts using <code>bash <script_name>.sh</code> or <code>sh <script_name>.sh</code>
+
 ### Result
 For a full demo run of the mission, refer to the video link above.
 1. Robot at spawn location as soon as the gazebo world loads: <br>
