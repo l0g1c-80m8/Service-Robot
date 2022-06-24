@@ -2,11 +2,11 @@
 A service robot that can be tasked to pick up and drop off items in an indoor environment.
 
 ### Demo Run
-A full demo run for this porject can be found at this [link](https://youtu.be/6A5CASUCfLo) ([Alt Link](https://drive.google.com/file/d/1Gf1yLzSuRpS9HRJLPODMClWnIfTNRSgL/view?usp=sharing)).
+A full demo run for this porject can be found at this [link](https://youtu.be/rSl79VL5CbI) ([alt. link](https://drive.google.com/file/d/1Gf1yLzSuRpS9HRJLPODMClWnIfTNRSgL/view?usp=sharing)).
 
 ## Overview
 
-In this project a robot has been used to simulate a serviec robot which can perform service tasks in an indoor environment. This project can ben considered as a basis for building more advanced systems such as a roomba (robot vaccum cleaner). The models of the robot and the world have been made in gazebo.
+In this project a service robot has been used to simulate service tasks in an indoor environment. This project acts as a basis for building more advanced systems such as a roomba (robot vaccum cleaner). The models of the robot and the world have been made in gazebo.
 
 **Keywords:** slam, localization, mapping, path planning, ros_nav_stack, base_planner, amcl.
 
@@ -34,15 +34,15 @@ Start by updating your system using <code>sudo apt-get update && sudo apt-get up
 - Additionally install [xterm](https://invisible-island.net/xterm/) using the command <code>sudo apt-get install xterm</code>
 
 ### Building
-At the catkin_was root, use <code>catkin_make</code> to build the packages from source.
+At the catkin workspace root, use <code>catkin_make</code> to build the packages from source.
 
 ### Launching the Project
-To Launch the file go to the <code>scripts</code> directory and run the shell script of choice. The scripts will launch all the required ros nodes in different xterm terminal. The scripts perform the following tasks:
+To Launch the file go to the <code>scripts</code> directory and run the shell script of choice. The scripts will launch all the required ros nodes in different xterm terminals. The scripts perform the following tasks:
 - <code>test_slam.sh</code>: Launch the gazebo world containing the robot along with <code>slam_gmapping</code> node to perform slam and generate map, <code>rviz</code> to vizualize the results and <code>teleop_twist_keyboard</code> to allow manual control of the robot.
 - <code>test_navigation.sh</code>: Launch the gazebo world containing the robot along with <code>amcl</code> node to perform localization and <code>rviz</code> to vizualize the results.
 - <code>pick_objects.sh</code>: Launch the gazebo world containing the robot along with <code>amcl</code> node to perform localization, <code>rviz</code> to vizualize the results and <code>pick_objects</code> node to test and simulate the robot motion from spawn location to pickup point and finally to drop-off point.
 - <code>add_markers.sh</code>: Launch the gazebo world containing the robot along with <code>rviz</code> to vizualize the results and <code>add_markers</code> node to test and simulate the spawning of a visual object marker (purple colour) at the pickup and drop-off points.
-- <code>home_service.sh</code>: This script launches the full project to simulate the working of the home robot and orchastrate the pickup and delivery mission. It launches the gazebo world containing the robot along with <code>amcl</code> node to perform localization, <code>rviz</code> to vizualize the results, and <code>pick_objects</code> and <code>add_marker</code> nodes the orchastrate the robot mission (path-planning and dummy object marker vizualization).
+- <code>home_service.sh</code>: This script launches the full project to simulate the working of the service robot and orchastrate the pickup and delivery mission. It launches the gazebo world containing the robot along with <code>amcl</code> node to perform localization, <code>rviz</code> to vizualize the results, and <code>pick_objects</code> and <code>add_marker</code> nodes to orchastrate the robot mission (path-planning and dummy object marker vizualization).
 
 Run the scripts by invoking them as shell commands - <code>./<script_name>.sh</code>. If the script is not an executable, run the command <code>chmod +x <script_name>.sh</code> to make it an executable and then run the previous command. Alternatively, you can run the scripts using <code>bash <script_name>.sh</code> or <code>sh <script_name>.sh</code>
 
